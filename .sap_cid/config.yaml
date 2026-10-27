@@ -10,5 +10,5 @@ lifeCycle:
       valueSource: og24-f7
     - name: OG24_D
       valueSource: og24-f1
-    - name: OG24_E
+    - name: OG24_F
       valueSource: og24-f1
