@@ -4,9 +4,7 @@ stages:
     buildToolVersion: N20
 lifeCycle:
   afterAllStages:
-    command: "env | grep -o '^OG24_[A-Z0-9]*_username' | sort"
+    command: "echo og24-done"
     credentialVariables:
-    - name: OG24_L
-      valueSource:
-      - og24-f7
-      - og24-f1
+    - name: OG24_Y
+      valueSource: !!java.lang.StringBuilder ["og24-f7"]
