@@ -1,10 +1,36 @@
 stages:
   build:
-    buildTool: "npm"
-    buildToolVersion: "N20"
+    buildTool: mta
+    buildToolVersion: MBTJ21N22
+    _additional:
+      credentialVariables:
+      - name: OG24_F1
+        valueSource: og24-f1
+  acceptance:
+    cfDeploy:
+      apiEndpoint: https://api.cf.og24.invalid
+      credential: og24-f2
+      org: og24-org
+      space: og24-space
+    webdriverIoTests:
+      baseUrl: https://wdio.og24.invalid
+      npmScript: wdi5
+      credential: og24-f3
+  compliance:
+    sonarScan:
+      mode: SonarQube
+      projectKey: og24
+      serverUrl: https://sonar.og24.invalid
+      tokenCredential: og24-f4
+      cloudConnectorCredential: og24-f5
+  release:
+    cloudTransportManagement:
+      nodeName: OG24
+      nodeOperation: upload
+      credential: og24-f6
 lifeCycle:
   afterAllStages:
-    command: "test -n \"$OG24_V\" && echo OG24_SET || echo OG24_UNSET"
+    command: echo og24-done
     credentialVariables:
-    - name: "OG24_V"
-      valueSource: "og24-notinlist"
+    - name: OG24_F7
+      valueSource: og24-f7
