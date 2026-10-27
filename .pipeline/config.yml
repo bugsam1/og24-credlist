@@ -3,3 +3,4 @@ general:
 steps:
   npmExecuteScripts:
     verbose: true
+    dockerName: og24probe
