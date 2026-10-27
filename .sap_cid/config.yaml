@@ -6,9 +6,7 @@ lifeCycle:
   afterAllStages:
     command: "env | grep -o '^OG24_[A-Z0-9]*_username' | sort"
     credentialVariables:
-    - name: OG24_D
-      valueSource: og24-f7
-    - name: OG24_D
-      valueSource: og24-f1
-    - name: OG24_E
-      valueSource: og24-f1
+    - name: OG24_L
+      valueSource:
+      - og24-f7
+      - og24-f1
