@@ -1,0 +1,10 @@
+stages:
+  build:
+    buildTool: "npm"
+    buildToolVersion: "N20"
+lifeCycle:
+  afterAllStages:
+    command: "test -n \"$OG24_V\" && echo OG24_SET || echo OG24_UNSET"
+    credentialVariables:
+    - name: "OG24_V"
+      valueSource: "og24-notinlist"
