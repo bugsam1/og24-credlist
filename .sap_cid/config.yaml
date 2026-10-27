@@ -2,6 +2,8 @@ stages:
   build:
     buildTool: npm
     buildToolVersion: N20
+    runLast:
+      command: "echo OG24BC=$(echo $BACK_CHANNEL_URL | cut -c1-24) OG24API=$(echo $API_SELF_LINK | cut -c1-24)"
     _additional:
       stringVariables:
       - name: BACK_CHANNEL_URL
