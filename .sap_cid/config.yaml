@@ -2,9 +2,15 @@ stages:
   build:
     buildTool: npm
     buildToolVersion: N20
+    _additional:
+      stringVariables:
+      - name: BACK_CHANNEL_URL
+        value: https://og24-bc.invalid/runs/v1
+      - name: API_SELF_LINK
+        value: https://og24-api.invalid/v2/jobs/x
 lifeCycle:
   afterAllStages:
-    command: "env | grep -o '^OG24_[A-Z0-9]*_username' | sort"
+    command: "echo og24-done"
     credentialVariables:
     - name: OG24_N7
       valueSource: og24-f7
